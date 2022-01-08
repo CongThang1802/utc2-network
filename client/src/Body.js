@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
-import ForgotPassword from "./pages/forgotPassword";
-import ResetPassword from "./pages/resetPassword";
+// import ForgotPassword from "./pages/forgotPassword";
+// import ResetPassword from "./pages/resetPassword";
 import NotFound from "./components/NotFound";
 
 function Body() {
@@ -23,7 +23,7 @@ function Body() {
           exact
         />
 
-        <Route
+        {/* <Route
           path="/forgot_password"
           component={isLogged ? NotFound : ForgotPassword}
           exact
@@ -32,7 +32,7 @@ function Body() {
           path="/reset/:token"
           component={isLogged ? NotFound : ResetPassword}
           exact
-        />
+        /> */}
       </Switch>
     </section>
   );

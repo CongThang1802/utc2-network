@@ -46,7 +46,7 @@ const Login = () => {
           />
 
           <small id="emailHelp" className="form-text text-muted">
-            Chúng tôi sẽ không chia sẽ email của bạn cho bất kỳ ai.
+            Chúng tôi sẽ không chia sẻ thông tin của bạn cho bất kỳ ai.
           </small>
         </div>
 
@@ -76,14 +76,9 @@ const Login = () => {
         >
           Đăng Nhập
         </button>
-        <p className="my-2">
-          <Link to="/forgot_password" style={{ color: "crimson" }}>
-            Quên mật khẩu?
-          </Link>
-        </p>
 
         <p className="my-2">
-          Bạn Chưa Có Tài Khoản?{" "}
+          Bạn chưa có tài khoản?{" "}
           <Link to="/register" style={{ color: "crimson" }}>
             Hãy Đăng Ký
           </Link>

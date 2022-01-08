@@ -22,9 +22,9 @@ const ChangePassword = ({ setShowDialogPassword }) => {
   const [data, setData] = useState(initialState);
 
   const { email, oldPassword, newPassword, cf_newPassword } = data;
-  // useEffect(() => {
-  //   if (auth.token) history.push("/");
-  // }, [auth.token, history]);
+  useEffect(() => {
+    if (auth.token) history.push("/");
+  }, [auth.token, history]);
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -64,16 +64,7 @@ const ChangePassword = ({ setShowDialogPassword }) => {
               name="email"
               style={{ background: `${alert.email ? "#fd2d6a14" : ""}` }}
             />
-            <small
-              className="text-danger position-absolute"
-              style={{
-                top: "50%",
-                right: "5px",
-                transform: "translateY(-50%)",
-              }}
-            >
-              {alert.email ? alert.email : ""}
-            </small>
+            <small>{alert.email ? alert.email : ""}</small>
           </div>
         </div>
 
@@ -89,15 +80,7 @@ const ChangePassword = ({ setShowDialogPassword }) => {
               name="oldPassword"
               style={{ background: `${alert.oldPassword ? "#fd2d6a14" : ""}` }}
             />
-            <small
-              className="text-danger position-absolute"
-              style={{
-                top: "50%",
-                right: "5px",
-                transform: "translateY(-50%)",
-              }}
-              onClick={() => setTypeOldPass(!typeOldPass)}
-            >
+            <small onClick={() => setTypeOldPass(!typeOldPass)}>
               {typeOldPass ? "Hide" : "Show"}
             </small>
           </div>
@@ -117,15 +100,7 @@ const ChangePassword = ({ setShowDialogPassword }) => {
               name="newPassword"
               style={{ background: `${alert.newPassword ? "#fd2d6a14" : ""}` }}
             />
-            <small
-              className="text-danger position-absolute"
-              style={{
-                top: "50%",
-                right: "5px",
-                transform: "translateY(-50%)",
-              }}
-              onClick={() => setTypeNewPass(!typeNewPass)}
-            >
+            <small onClick={() => setTypeNewPass(!typeNewPass)}>
               {typeNewPass ? "Hide" : "Show"}
             </small>
           </div>
@@ -147,15 +122,7 @@ const ChangePassword = ({ setShowDialogPassword }) => {
                 background: `${alert.cf_newPassword ? "#fd2d6a14" : ""}`,
               }}
             />
-            <small
-              className="text-danger position-absolute"
-              style={{
-                top: "50%",
-                right: "5px",
-                transform: "translateY(-50%)",
-              }}
-              onClick={() => setTypeCfPass(!typeCfPass)}
-            >
+            <small onClick={() => setTypeCfPass(!typeCfPass)}>
               {typeCfPass ? "Hide" : "Show"}
             </small>
           </div>

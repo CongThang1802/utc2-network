@@ -61,12 +61,6 @@ const ForgotPassword = () => {
             Hãy Đăng Nhập
           </Link>
         </p>
-        <p className="my-2">
-          Đặt lại mật khẩu?{" "}
-          <Link to="/reset/:token" style={{ color: "crimson" }}>
-            OK
-          </Link>
-        </p>
       </form>
     </div>
   );

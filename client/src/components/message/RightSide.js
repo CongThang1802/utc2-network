@@ -220,7 +220,7 @@ const RightSide = () => {
       >
         <div className="chat_display" ref={refDisplay}>
           <button style={{ marginTop: "-25px", opacity: 0 }} ref={pageEnd}>
-            Load more
+            Xem Thêm
           </button>
 
           {data.map((msg, index) => (

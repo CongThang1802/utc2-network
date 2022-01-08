@@ -26,7 +26,7 @@
   cursor: pointer;
   opacity: 0.5;
 }
-.form-group small {
+.position-relative small {
   position: absolute;
   top: 50%;
   right: 5px;
