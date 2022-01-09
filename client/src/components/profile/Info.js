@@ -70,7 +70,7 @@ const Info = ({ id, auth, profile, dispatch }) => {
 
             <div className="follow_btn">
               <span className="mr-4" onClick={() => setShowFollowers(true)}>
-                {user.followers.length} Theo Dõi
+                {user.followers.length}Người Theo Dõi
               </span>
               <span className="ml-4" onClick={() => setShowFollowing(true)}>
                 {user.following.length} Đang Theo Dõi
