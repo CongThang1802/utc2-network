@@ -77,6 +77,10 @@ const Login = () => {
           Đăng Nhập
         </button>
 
+        <Link to="/forgot_password" style={{ color: "crimson" }}>
+          Quên Mật Khẩu?
+        </Link>
+
         <p className="my-2">
           Bạn chưa có tài khoản?{" "}
           <Link to="/register" style={{ color: "crimson" }}>

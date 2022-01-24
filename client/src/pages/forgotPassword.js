@@ -55,12 +55,12 @@ const ForgotPassword = () => {
           Xác Thực Email
         </button>
 
-        <p className="my-2">
+        {/* <p className="my-2">
           Bạn Không Quên Mật Khẩu?{" "}
           <Link to="/" style={{ color: "crimson" }}>
             Hãy Đăng Nhập
           </Link>
-        </p>
+        </p> */}
       </form>
     </div>
   );

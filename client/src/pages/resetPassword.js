@@ -3,12 +3,15 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { resetPassword } from "../redux/actions/authAction";
+// import { resetPassword } from "../redux/actions/authAction";
+import { postDataAPI } from "../utils/fetchData";
+import { GLOBALTYPES } from "../redux/actions/globalTypes";
+import validReset from "../utils/validreset";
 
 function ResetPassword() {
   const { token } = useParams();
   const { auth, alert } = useSelector((state) => state);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const history = useHistory();
   const initialState = {
     password: "",
@@ -27,11 +30,32 @@ function ResetPassword() {
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
-    setData({ ...data, [name]: value });
+    setData({ ...data, [name]: value, err: "", success: "" });
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(resetPassword(data, token));
+  const handleSubmit = async (dispatch) => {
+    // e.preventDefault();
+    const check = validReset(data);
+    if (check.errLength > 0)
+      return dispatch({ type: GLOBALTYPES.ALERT, payload: check.errMsg });
+    try {
+      const res = await postDataAPI("reset", data, token);
+      setData({ ...data });
+      dispatch({
+        type: GLOBALTYPES.ALERT,
+        payload: {
+          success: res.data.msg,
+        },
+      });
+    } catch (err) {
+      dispatch({
+        type: GLOBALTYPES.ALERT,
+        payload: {
+          error: err.response.data.msg,
+        },
+      });
+    }
+
+    // dispatch(resetPassword(data, token));
   };
 
   return (
