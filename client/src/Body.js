@@ -18,7 +18,7 @@ function Body() {
       <Alert />
       <section>
         <Switch>
-          <Route exact path="/" component={auth.token ? Home : Login} />
+          {/* <Route exact path="/" component={auth.token ? Home : Login} />
 
           <Route
             path="/register"
@@ -30,7 +30,7 @@ function Body() {
             path="/forgot_password"
             component={isLogged ? NotFound : Forgot}
             exact
-          />
+          /> */}
           <Route
             path="/reset/:token"
             component={isLogged ? NotFound : Reset}
