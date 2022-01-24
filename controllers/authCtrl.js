@@ -104,7 +104,7 @@ const authCtrl = {
         return res.status(400).json({ msg: "Email chưa được đăng ký." });
 
       const access_token = createAccessToken({ id: user._id });
-      const url = `${CLIENT_URL}reset/${access_token}`;
+      const url = `${CLIENT_URL}/reset/${access_token}`;
 
       sendMail(email, url, "Đặt lại mặt khẩu của bạn");
       res.json({ msg: "Vui lòng kiểm tra email." });
