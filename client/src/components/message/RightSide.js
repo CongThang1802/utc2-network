@@ -147,7 +147,7 @@ const RightSide = () => {
   }, [isLoadMore]);
 
   const handleDeleteConversation = () => {
-    if (window.confirm("Do you want to delete?")) {
+    if (window.confirm("Bạn muốn xoá phòng chat này ?")) {
       dispatch(deleteConversation({ auth, id }));
       return history.push("/message");
     }
